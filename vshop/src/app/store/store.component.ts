@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { CATEGORIES } from './mock-categories';
+
+import { Category } from './category';
+import { CategoryService } from './category.service';
 
 @Component({
   selector: 'app-store',
@@ -8,11 +10,18 @@ import { CATEGORIES } from './mock-categories';
 })
 export class StoreComponent implements OnInit {
   
-  categories = CATEGORIES;
+  categories: Category[];
 
-  constructor() { }
+  constructor(private categoryService: CategoryService) { }
 
   ngOnInit() {
+    this.getCategories();
+  }
+
+  getCategories(): void {
+    
+    this.categoryService.getCategories()
+      .subscribe(categories => this.categories = categories);
   }
 
 }

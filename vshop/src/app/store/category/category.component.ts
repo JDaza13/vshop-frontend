@@ -3,6 +3,7 @@ import { Category } from '../category';
 import { Product } from '../product';
 
 import { PRODUCTS } from '../mock-products';
+import { ProductService } from '../product.service';
 
 @Component({
   selector: 'app-category',
@@ -13,16 +14,19 @@ export class CategoryComponent implements OnInit {
   
   @Input() categoryData: Category;
   
-  products = PRODUCTS;
+  products : Product[];
 
-  constructor() { }
+  constructor(private productService: ProductService) { }
 
   ngOnInit() {
     this.getProducts();
   }
   
   getProducts(): void {
-    this.products = this.products.filter(product => product.sublevel_id == this.categoryData.id);
+    if(this.categoryData.id){
+      this.productService.getProducts({'categoryId': this.categoryData.id})
+        .subscribe(products => this.products = products);
+    }
   }
 
 }
