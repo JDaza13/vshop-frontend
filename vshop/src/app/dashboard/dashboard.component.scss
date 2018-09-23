@@ -1,0 +1,19 @@
+@import '../../base.scss';
+
+.dashboard-general-container{
+    background-color: $color-white;
+    height: 100%;
+    .dashboard-router-container{
+        display: flex;
+        text-align: center;
+        .dasboard-route-item{
+            .route-img{
+                width: 30%;
+            }
+            &:hover {
+                cursor: pointer;
+                border: 1px solid $color-gray;
+            }
+        }
+    }
+}

@@ -1,0 +1,22 @@
+@import '../base.scss';
+
+.general-container{
+    background-color: $main-gray-background-color;
+    .header-container{
+        margin-bottom: 10px;
+        background-color: $color-white;
+        border: 1px solid $color-gray;
+        height: 15vh;
+        .logo-img{
+            margin: 5px;
+            width: 5%;
+            @media (max-width: $large-res) {
+                width: 20%;
+            }
+        }
+    }
+    .body-container{
+        margin: 10px 30px;
+        height: 80vh;
+    }
+}
