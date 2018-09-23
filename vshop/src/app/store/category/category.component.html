@@ -1,0 +1,22 @@
+<mat-expansion-panel>
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      {{categoryData.name}}
+    </mat-panel-title>
+  </mat-expansion-panel-header>
+
+  <div class="sublevel" *ngIf="categoryData.sublevels">
+    <mat-accordion>
+      <app-category 
+        *ngFor="let category of categoryData.sublevels"
+        [categoryData]="category">
+      </app-category>
+    </mat-accordion>
+  </div>
+  <div class="product-list" *ngIf="!categoryData.sublevels">
+      <app-product 
+        *ngFor="let product of products"
+        [product]="product">
+      </app-product>
+  </div>
+</mat-expansion-panel>

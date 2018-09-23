@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CATEGORIES } from './mock-categories';
 
 @Component({
   selector: 'app-store',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./store.component.scss']
 })
 export class StoreComponent implements OnInit {
+  
+  categories = CATEGORIES;
 
   constructor() { }
 

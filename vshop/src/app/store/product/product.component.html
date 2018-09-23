@@ -1,0 +1,29 @@
+<mat-card class="product-item">
+  <mat-card-header>
+    <mat-card-title>
+        <p><span matBadge="{{product.quantity}}" matBadgeOverlap="false">{{product.name}}</span></p>
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <ul>
+        <li>{{product.price}}</li>
+        <li>{{product.quantity}}</li>
+    </ul>
+    <span *ngIf="product.available" class="product-availability">
+        <i class="fa fa-check-circle"></i>
+    </span>
+    <span *ngIf="!product.available" class="product-availability">
+        <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="product-add-container" *ngIf="product.available">
+        <div class="add-quantity">
+            <mat-form-field class="example-full-width">
+                <input matInput type="number" placeholder="Cantidad">
+            </mat-form-field>
+        </div>
+        <div class="add-button">
+            <button mat-raised-button>Agregar</button>
+        </div>
+    </div>
+  </mat-card-content>
+</mat-card>
