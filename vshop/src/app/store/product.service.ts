@@ -15,7 +15,7 @@ export class ProductService {
   
   getProducts(params): Observable<Product[]> {
     return this.http.get<Product[]>(APP_CONSTANTS.API.API_BASE_PATH +
-      APP_CONSTANTS.API.PRODUCTS_SERVICE.GET_PRODUCTS.replace(':categoryId': params.categoryId), {});
+      APP_CONSTANTS.API.PRODUCTS_SERVICE.GET_PRODUCTS.replace(':categoryId', params.categoryId), {});
   }
   
 }

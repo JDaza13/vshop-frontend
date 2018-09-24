@@ -2,7 +2,6 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Category } from '../category';
 import { Product } from '../product';
 
-import { PRODUCTS } from '../mock-products';
 import { ProductService } from '../product.service';
 
 @Component({
@@ -23,7 +22,7 @@ export class CategoryComponent implements OnInit {
   }
   
   getProducts(): void {
-    if(this.categoryData.id){
+    if(this.categoryData.id && !this.categoryData.sublevels){
       this.productService.getProducts({'categoryId': this.categoryData.id})
         .subscribe(products => this.products = products);
     }
