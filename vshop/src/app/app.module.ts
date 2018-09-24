@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -9,6 +10,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 import { HttpClientModule } from '@angular/common/http';
 
@@ -30,6 +32,7 @@ import { ProductComponent } from './store/product/product.component';
     ProductComponent
   ],
   imports: [
+    MatSnackBarModule,
     MatProgressSpinnerModule,
     MatButtonModule,
     MatInputModule,
@@ -39,6 +42,7 @@ import { ProductComponent } from './store/product/product.component';
     MatExpansionModule,
     BrowserAnimationsModule,
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
     HttpClientModule
   ],

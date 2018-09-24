@@ -13,19 +13,35 @@
             <strong><span>Costo del producto: </span></strong>
             <span>{{product.price}}</span>
             <br>
-            <strong><span>Cantidad disponible: </span></strong>
-            <span>{{product.quantity}}</span>
+            <div class="product-availability" *ngIf="!inShopCart">
+                <strong><span>Cantidad disponible: </span></strong>
+                <span>{{product.quantity}}</span>
+            </div>
         </div>
-        <div class="product-add-container col-lg-6 col-md-12">
+        <div class="product-add-container col-lg-6 col-md-12" *ngIf="!inShopCart">
             <span *ngIf="!product.available">!Producto no disponible!</span>
             <div class="add-form row" *ngIf="product.available">
                 <div class="add-quantity col-lg-6 col-md-12 text-center">
-                    <mat-form-field class="example-full-width">
-                        <input matInput type="number" placeholder="Cantidad">
+                    <mat-form-field>
+                        <input [(ngModel)]="storeQuantity" matInput type="number" min="0" placeholder="Cantidad">
                     </mat-form-field>
                 </div>
                 <div class="add-button col-lg-6 col-md-12 text-center">
-                    <button mat-raised-button>Agregar</button>
+                    <button mat-raised-button (click)="addToCart()" disabled="{{storeQuantity == 0}}">Agregar</button>
+                </div>
+            </div>
+        </div>
+        <div class="product-edit-cart col-lg-6 col-md-12" *ngIf="inShopCart">
+            <div class="add-form row" *ngIf="product.available">
+                <div class="add-quantity col-lg-6 col-md-12 text-center">
+                    <mat-form-field>
+                        <input [(ngModel)]="product.cart_quantity" matInput type="number" min="0" placeholder="Cantidad">
+                    </mat-form-field>
+                </div>
+                <div class="add-button col-lg-6 col-md-12 text-center">
+                    <button mat-raised-button (click)="editInCart()"
+                        disabled="{{product.cart_quantity == 0}}">Guardar</button>
+                    <button mat-raised-button (click)="deleteFromCart()">Eliminar</button>
                 </div>
             </div>
         </div>

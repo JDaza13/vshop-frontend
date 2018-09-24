@@ -1,3 +1,6 @@
-<p>
-  cart works!
-</p>
+<mat-spinner *ngIf="!cartItems" [diameter]="50"></mat-spinner>
+<app-product 
+    *ngFor="let item of cartItems"
+    [product]="item"
+    [inShopCart]="true">
+</app-product>

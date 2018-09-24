@@ -8,6 +8,12 @@ export const APP_CONSTANTS = {
         },
         PRODUCTS_SERVICE: {
             GET_PRODUCTS: 'products/get-products/:categoryId'
+        },
+        CART_SERVICE: {
+            GET_CART: 'cart/get-cart',
+            PUT_ITEMS: 'cart/put-cart-items',
+            EDIT_ITEM: 'cart/edit-cart-item/:itemId',
+            DELETE_ITEM: 'cart/delete-cart-item/:itemId'
         }
     }
 };

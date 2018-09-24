@@ -5,4 +5,6 @@ export class Product {
     price: string;
     available: boolean;
     name: string;
+    cart_quantity?: number;
+    cart_added?: number;
 }
