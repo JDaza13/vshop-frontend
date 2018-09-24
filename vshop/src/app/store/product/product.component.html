@@ -1,28 +1,33 @@
 <mat-card class="product-item">
   <mat-card-header>
     <mat-card-title>
-        <p><span matBadge="{{product.quantity}}" matBadgeOverlap="false">{{product.name}}</span></p>
+        <div class="row">
+            <strong><h6>{{product.name}}</h6></strong>
+        </div>
     </mat-card-title>
   </mat-card-header>
   <mat-card-content>
-    <ul>
-        <li>{{product.price}}</li>
-        <li>{{product.quantity}}</li>
-    </ul>
-    <span *ngIf="product.available" class="product-availability">
-        <i class="fa fa-check-circle"></i>
-    </span>
-    <span *ngIf="!product.available" class="product-availability">
-        <i class="fa fa-times-circle"></i>
-    </span>
-    <div class="product-add-container" *ngIf="product.available">
-        <div class="add-quantity">
-            <mat-form-field class="example-full-width">
-                <input matInput type="number" placeholder="Cantidad">
-            </mat-form-field>
+      
+    <div class="product-data-container row">
+        <div class="product-info col-lg-6 col-md-12">
+            <strong><span>Costo del producto: </span></strong>
+            <span>{{product.price}}</span>
+            <br>
+            <strong><span>Cantidad disponible: </span></strong>
+            <span>{{product.quantity}}</span>
         </div>
-        <div class="add-button">
-            <button mat-raised-button>Agregar</button>
+        <div class="product-add-container col-lg-6 col-md-12">
+            <span *ngIf="!product.available">!Producto no disponible!</span>
+            <div class="add-form row" *ngIf="product.available">
+                <div class="add-quantity col-lg-6 col-md-12 text-center">
+                    <mat-form-field class="example-full-width">
+                        <input matInput type="number" placeholder="Cantidad">
+                    </mat-form-field>
+                </div>
+                <div class="add-button col-lg-6 col-md-12 text-center">
+                    <button mat-raised-button>Agregar</button>
+                </div>
+            </div>
         </div>
     </div>
   </mat-card-content>

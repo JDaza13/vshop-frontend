@@ -8,6 +8,7 @@ import {MatBadgeModule} from '@angular/material/badge';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 import { HttpClientModule } from '@angular/common/http';
 
@@ -29,6 +30,7 @@ import { ProductComponent } from './store/product/product.component';
     ProductComponent
   ],
   imports: [
+    MatProgressSpinnerModule,
     MatButtonModule,
     MatInputModule,
     MatCheckboxModule,
