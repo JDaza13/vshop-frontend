@@ -16,6 +16,8 @@ export class CategoryComponent implements OnInit {
   filterObj = {};
   
   products: Product[];
+  
+  appliedFilter = false;
 
   constructor(private productService: ProductService) { }
 
@@ -30,6 +32,8 @@ export class CategoryComponent implements OnInit {
   }
   
   filterChange(filterData): void {
+    
+    this.appliedFilter = true;
     
     this.filterObj = {
       'ava': filterData.availability.availables,

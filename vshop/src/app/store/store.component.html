@@ -1,6 +1,8 @@
 <div class="store-general-container">
     <mat-accordion>
-        <mat-spinner *ngIf="!categories" [diameter]="50"></mat-spinner>
+        <div class="spinner-container">
+            <mat-spinner class="vshop-spinner" *ngIf="!categories" [diameter]="50"></mat-spinner>
+        </div>
         <app-category *ngFor="let category of categories" [categoryData]="category"></app-category>
     </mat-accordion>
 </div>

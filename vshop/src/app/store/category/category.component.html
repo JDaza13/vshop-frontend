@@ -16,7 +16,9 @@
     </div>
     <div class="product-list" *ngIf="!categoryData.sublevels">
       <app-product-filter (filterChange)="filterChange($event)"></app-product-filter>
-      <mat-spinner *ngIf="!products" [diameter]="50"></mat-spinner>
+      <div class="spinner-container">
+        <mat-spinner class="vshop-spinner" *ngIf="!products && appliedFilter" [diameter]="50"></mat-spinner>
+      </div>
       <app-product 
         *ngFor="let product of products"
         [product]="product">

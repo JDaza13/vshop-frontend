@@ -24,3 +24,4 @@ ng lint
 
 * General styles of the app are quite basic
 * shopcart is the same for the app, should be independent for user (the app has no users)
+* Because of angular material, min-res is 470px, smaller screens may have problems with form fields
