@@ -13,19 +13,37 @@ export class CategoryComponent implements OnInit {
   
   @Input() categoryData: Category;
   
+  filterObj = {};
+  
   products : Product[];
 
   constructor(private productService: ProductService) { }
 
   ngOnInit() {
-    this.getProducts();
   }
   
-  getProducts(): void {
+  getProducts(filter): void {
     if(this.categoryData.id && !this.categoryData.sublevels){
-      this.productService.getProducts({'categoryId': this.categoryData.id})
+      this.productService.getProducts({'categoryId': this.categoryData.id}, filter)
         .subscribe(products => this.products = products);
     }
+  }
+  
+  filterChange(filterData): void {
+    
+    this.filterObj = {
+      'ava': filterData.availability.availables,
+      'avna': filterData.availability.nonAvailables,
+      'avsrt': filterData.availability.sort ? 1 : -1,
+      'prmin': filterData.price.min,
+      'prmax': filterData.price.max,
+      'prsrt': filterData.price.sort ? 1 : -1,
+      'stmin': filterData.stock.min,
+      'stmax': filterData.stock.max,
+      'stsrt': filterData.stock.sort ? 1 : -1
+    }
+    
+    this.getProducts(this.filterObj);
   }
 
 }

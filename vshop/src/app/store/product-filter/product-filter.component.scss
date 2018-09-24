@@ -1,0 +1,14 @@
+@import '../../../base.scss';
+
+.product-filter-container{
+    border: 1px solid $color-gray;
+    margin: 5px 0px;
+    padding: 5px;
+    .order-by{
+        border-top: 2px dashed $color-gray;
+        padding: 15px 0;
+    }
+    .apply-filter{
+        margin: 10px 0;
+    }
+}

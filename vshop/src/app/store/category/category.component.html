@@ -15,6 +15,7 @@
       </mat-accordion>
     </div>
     <div class="product-list" *ngIf="!categoryData.sublevels">
+      <app-product-filter (filterChange)="filterChange($event)"></app-product-filter>
       <mat-spinner *ngIf="!products" [diameter]="50"></mat-spinner>
       <app-product 
         *ngFor="let product of products"

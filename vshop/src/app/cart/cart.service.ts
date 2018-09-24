@@ -10,13 +10,6 @@ import { APP_CONSTANTS } from '../constants';
   providedIn: 'root'
 })
 export class CartService {
-  
-  const putHttpOptions = {
-    headers: new HttpHeaders({
-      'Content-Type':  'application/json',
-      'Access-Control-Allow-Methods': 'PUT'
-    })
-  };
 
   constructor(private http: HttpClient) { }
   

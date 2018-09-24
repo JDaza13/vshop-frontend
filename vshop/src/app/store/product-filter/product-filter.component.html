@@ -1,0 +1,66 @@
+<div class="product-filter-container row">
+    <div class="by-availability order-by col-lg-4 col-md-12">
+        <div class="availability-sorter">
+            <mat-slide-toggle [(ngModel)]="filterData.availability.sort">
+                <span *ngIf="filterData.availability.sort">Ascendente</span>
+                <span *ngIf="!filterData.availability.sort">Descendente</span>
+            </mat-slide-toggle>
+        </div>
+        <br>
+        <div class="availability-picker">
+            <mat-checkbox class="example-margin"
+                [(ngModel)]="filterData.availability.availables">
+                Productos disponibles
+            </mat-checkbox>
+            <br>
+            <mat-checkbox class="example-margin"
+                [(ngModel)]="filterData.availability.nonAvailables">
+                Productos no disponibles
+            </mat-checkbox>
+        </div>
+    </div>
+    <div class="by-price order-by col-lg-4 col-md-12">
+        <div class="price-sorter">
+            <mat-slide-toggle [(ngModel)]="filterData.price.sort">
+                <span *ngIf="filterData.price.sort">Ascendente</span>
+                <span *ngIf="!filterData.price.sort">Descendente</span>
+            </mat-slide-toggle>
+        </div>
+        <br>
+        <div class="price-picker">
+            <mat-form-field hintLabel="Rango de precios - Mínimo">
+                <input matInput type="number" min="0" placeholder="Desde"
+                    [(ngModel)]="filterData.price.min">
+            </mat-form-field>
+            <br><br>
+            <mat-form-field hintLabel="Rango de precios - Máximo">
+                <input matInput type="number" min="0" placeholder="Hasta"
+                    [(ngModel)]="filterData.price.max">
+            </mat-form-field>
+        </div>
+    </div>
+    <div class="by-stock order-by col-lg-4 col-md-12">
+        <div class="stock-sorter">
+            <mat-slide-toggle [(ngModel)]="filterData.stock.sort">
+                <span *ngIf="filterData.stock.sort">Ascendente</span>
+                <span *ngIf="!filterData.stock.sort">Descendente</span>
+            </mat-slide-toggle>
+        </div>
+        <br>
+        <div class="stock-picker">
+            <mat-form-field hintLabel="Unidades disponibles - Mínimo">
+                <input matInput type="number" min="0" placeholder="Desde" 
+                    [(ngModel)]="filterData.stock.min">
+            </mat-form-field>
+            <br><br>
+            <mat-form-field hintLabel="Unidades disponibles - Máximo">
+                <input matInput type="number" min="0" placeholder="Hasta"
+                    [(ngModel)]="filterData.stock.max">
+            </mat-form-field>
+        </div>
+    </div>
+    <div class="apply-filter col-md-12 text-center">
+        <button mat-raised-button
+            (click)="applyFilters()">Aplicar filtros</button>
+    </div>
+</div>

@@ -11,7 +11,7 @@
     <div class="product-data-container row">
         <div class="product-info col-lg-6 col-md-12">
             <strong><span>Costo del producto: </span></strong>
-            <span>{{product.price}}</span>
+            <span>{{product.price | currency}}</span>
             <br>
             <div class="product-availability" *ngIf="!inShopCart">
                 <strong><span>Cantidad disponible: </span></strong>
