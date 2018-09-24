@@ -1,3 +1,3 @@
 export const ENV_VAR = {
-    API_BASE_PATH: 'https://vshop-backend-jdaza13.c9users.io/'
+    API_BASE_PATH: 'http://localhost:8081/'
 };

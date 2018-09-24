@@ -24,12 +24,15 @@ export class ProductComponent implements OnInit {
   
   addToCart(): void {
     
-    const item = {};
-    Object.assign(item, this.product);
-    
-    item.cart_quantity = this.storeQuantity;
-    item.cart_added = (new Date).getTime();
-    delete item._id;
+    const item = {
+      sublevel_id: this.product.sublevel_id,
+      quantity: this.product.quantity,
+      price: this.product.price,
+      available: this.product.available,
+      name: this.product.name,
+      cart_quantity: this.storeQuantity,
+      cart_added: (new Date).getTime()
+    };
 
     const items = {
       itemsArray: [item]
@@ -48,10 +51,15 @@ export class ProductComponent implements OnInit {
   
   editInCart(): void {
     
-    const item = {};
-    Object.assign(item, this.product);
-    
-    delete item._id;
+    const item = {
+      sublevel_id: this.product.sublevel_id,
+      quantity: this.product.quantity,
+      price: this.product.price,
+      available: this.product.available,
+      name: this.product.name,
+      cart_quantity: this.product.cart_quantity,
+      cart_added: this.product.cart_added
+    };
     
     const snackBarMsg = 'Has editado ' +
       this.product.name + ' en tu carrito.';

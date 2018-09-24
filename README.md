@@ -6,11 +6,12 @@
 
 ## Run the app with 
 
-ng serve --disable-host-check
+ng serve --disable-host-check (env_var.ts will make requests to 'http://localhost:8081/')
+
 
 ## Run app on PRD with (This process mocks minify and dist export, it is not suitable for real PRD env)
 
-ng serve --prod --disable-host-check
+ng serve --prod --disable-host-check (env_var.ts will make requests to 'https://vshop-backend-jdaza13.c9users.io/')
 
 ## Run lint with
 
