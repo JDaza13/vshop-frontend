@@ -22,4 +22,5 @@ ng lint
 
 ## TODO
 
-* All of it
+* General styles of the app are quite basic
+* shopcart is the same for the app, should be independent for user (the app has no users)
