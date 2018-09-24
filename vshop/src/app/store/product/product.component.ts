@@ -24,18 +24,18 @@ export class ProductComponent implements OnInit {
   
   addToCart(): void {
     
-    let item = {};
-    Object.assign(item, this.product)
+    const item = {};
+    Object.assign(item, this.product);
     
     item.cart_quantity = this.storeQuantity;
     item.cart_added = (new Date).getTime();
     delete item._id;
 
-    let items = {
+    const items = {
       itemsArray: [item]
     };
     
-    let snackBarMsg = 'Has agregado ' +
+    const snackBarMsg = 'Has agregado ' +
       item.cart_quantity + ' de ' +
         item.name + ' a tu carrito.';
     
@@ -48,12 +48,12 @@ export class ProductComponent implements OnInit {
   
   editInCart(): void {
     
-    let item = {};
-    Object.assign(item, this.product)
+    const item = {};
+    Object.assign(item, this.product);
     
     delete item._id;
     
-    let snackBarMsg = 'Has editado ' +
+    const snackBarMsg = 'Has editado ' +
       this.product.name + ' en tu carrito.';
     
     this.snackBar.open(snackBarMsg, 'Vale!', {
@@ -67,9 +67,9 @@ export class ProductComponent implements OnInit {
   
   deleteFromCart(): void {
     
-    let itemId = this.product._id;
+    const itemId = this.product._id;
     
-    let snackBarMsg = 'Has eliminado ' +
+    const snackBarMsg = 'Has eliminado ' +
       this.product.name + ' de tu carrito.';
     
     this.snackBar.open(snackBarMsg, 'Vale!', {

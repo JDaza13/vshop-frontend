@@ -25,7 +25,7 @@ export class ProductFilterComponent implements OnInit {
       max: 99999999,
       sort: false
     }
-  }
+  };
 
   constructor() { }
 

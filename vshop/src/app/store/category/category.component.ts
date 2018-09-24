@@ -15,7 +15,7 @@ export class CategoryComponent implements OnInit {
   
   filterObj = {};
   
-  products : Product[];
+  products: Product[];
 
   constructor(private productService: ProductService) { }
 
@@ -23,7 +23,7 @@ export class CategoryComponent implements OnInit {
   }
   
   getProducts(filter): void {
-    if(this.categoryData.id && !this.categoryData.sublevels){
+    if (this.categoryData.id && !this.categoryData.sublevels) {
       this.productService.getProducts({'categoryId': this.categoryData.id}, filter)
         .subscribe(products => this.products = products);
     }
@@ -41,7 +41,7 @@ export class CategoryComponent implements OnInit {
       'stmin': filterData.stock.min,
       'stmax': filterData.stock.max,
       'stsrt': filterData.stock.sort ? 1 : -1
-    }
+    };
     
     this.getProducts(this.filterObj);
   }
